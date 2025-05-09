@@ -1,24 +1,14 @@
 function createBookmarkSection() {
-  const targetText = "Secure video conferencing for everyone";
-  const targetElement = Array.from(document.querySelectorAll("h1")).find((el) =>
-    el.textContent.includes(targetText)
-  );
+  // Create the overlay element
+  const bookmarkSection = document.createElement("div");
+  bookmarkSection.id = "meet-bookmarks";
+  bookmarkSection.innerHTML =
+    '<h3>Bookmarked Chats</h3><div id="bookmark-list"></div>';
 
-  if (
-    targetElement &&
-    targetElement.parentNode &&
-    targetElement.parentNode.parentNode
-  ) {
-    const bookmarkSection = document.createElement("div");
-    bookmarkSection.id = "meet-bookmarks";
-    bookmarkSection.innerHTML =
-      '<h3>Bookmarked Chats</h3><div id="bookmark-list"></div>';
-    targetElement.parentNode.parentNode.appendChild(bookmarkSection);
-    console.log("Bookmark section created");
-    return true;
-  }
-  console.error("Target element not found");
-  return false;
+  // Add it directly to the body
+  document.body.appendChild(bookmarkSection);
+  console.log("Bookmark overlay created");
+  return true;
 }
 
 function updateBookmarks() {
