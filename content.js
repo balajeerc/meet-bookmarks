@@ -1,4 +1,9 @@
 function createBookmarkSection() {
+  // Only create the overlay on the Meet home page
+  if (window.location.href !== "https://meet.google.com/landing") {
+    return false;
+  }
+
   // Create the overlay element
   const bookmarkSection = document.createElement("div");
   bookmarkSection.id = "meet-bookmarks";
