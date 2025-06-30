@@ -1,6 +1,6 @@
 function createBookmarkSection() {
   // Only create the overlay on the Meet home page
-  if (window.location.href !== "https://meet.google.com/landing") {
+  if (!window.location.href.startsWith("https://meet.google.com/landing")) {
     return false;
   }
 
