@@ -1,10 +1,11 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Meet Bookmarks",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Add bookmarked chat links to Google Meet",
-  "permissions": ["storage", "https://meet.google.com/landing*"],
-  "browser_action": {
+  "permissions": ["storage"],
+  "host_permissions": ["https://meet.google.com/*"],
+  "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
